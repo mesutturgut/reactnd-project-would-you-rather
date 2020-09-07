@@ -10,7 +10,7 @@ import {
   Loader,
   Dimmer
 } from 'semantic-ui-react';
-import { setAuthUser } from '../actions/authUser';
+import { setAuthedUser } from '../actions/authUser';
 
 export class Login extends Component {
   state = {
@@ -83,13 +83,13 @@ class LoginForm extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    const { onLoading, setAuthUser } = this.props;
+    const { onLoading, setAuthedUser } = this.props;
     const authUser = this.state.value;
 
     new Promise((res, rej) => {
       onLoading();
       setTimeout(() => res(), 500);
-    }).then(() => setAuthUser(authUser));
+    }).then(() => setAuthedUser(authUser));
   };
   generateDropdownData = () => {
     const { users } = this.props;
@@ -128,7 +128,7 @@ class LoginForm extends Component {
 
 const ConnectedLoginForm = connect(
   mapStateToProps,
-  { setAuthUser }
+  { setAuthedUser }
 )(LoginForm);
 
 function mapStateToProps({ users }) {

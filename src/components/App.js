@@ -4,12 +4,12 @@ import { Grid } from 'semantic-ui-react';
 import { handleInitialData } from '../actions/shared';
 import { connect } from 'react-redux';
 import Login from './Login';
-import Nav from './Nav';
+import Navigate from './Navigate';
 import Home from './Home';
 import UserCard from './UserCard';
 import NewPoll from './NewPoll';
-import Leaderboard from './Leaderboard';
-import NoMatch from './NoMatch';
+import LeaderBoard from './LeaderBoard';
+import NoMatched from './NoMatched';
 
 class App extends Component {
   componentDidMount() {
@@ -30,15 +30,15 @@ class App extends Component {
             />
           ) : (
             <Fragment>
-              <Nav />
+              <Navigate />
               <ContentGrid>
                 <Switch>
                   <Route exact path="/" component={Home} />
-                  <Route path="/questions/bad_id" component={NoMatch} />
+                  <Route path="/questions/bad_id" component={NoMatched} />
                   <Route path="/questions/:question_id" component={UserCard} />
                   <Route path="/add" component={NewPoll} />
-                  <Route path="/leaderboard" component={Leaderboard} />
-                  <Route component={NoMatch} />
+                  <Route path="/leaderboard" component={LeaderBoard} />
+                  <Route component={NoMatched} />
                 </Switch>
               </ContentGrid>
             </Fragment>
@@ -49,6 +49,12 @@ class App extends Component {
   }
 }
 
+function mapStateToProps({ authUser }) {
+  return {
+    authUser
+  };
+}
+
 const ContentGrid = ({ children }) => (
   <Grid padded="vertically" columns={1} centered>
     <Grid.Row>
@@ -57,11 +63,7 @@ const ContentGrid = ({ children }) => (
   </Grid>
 );
 
-function mapStateToProps({ authUser }) {
-  return {
-    authUser
-  };
-}
+
 
 export default connect(
   mapStateToProps,

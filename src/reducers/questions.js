@@ -1,17 +1,17 @@
 import {
-  RECEIVE_QUESTIONS,
-  ADD_ANSWER_TO_QUESTION,
+  RECEIVED_QUESTIONS,
+  ADD_ANSWER_QUESTION,
   ADD_QUESTION
 } from '../actions/questions';
 
 export default function questions(state = {}, action) {
   switch (action.type) {
-    case RECEIVE_QUESTIONS:
+    case RECEIVED_QUESTIONS:
       return {
         ...state,
         ...action.questions
       };
-    case ADD_ANSWER_TO_QUESTION:
+    case ADD_ANSWER_QUESTION:
       const { authUser, qid, answer } = action;
 
       return {

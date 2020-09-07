@@ -50,8 +50,8 @@ Your code will talk to the database via 4 methods:
 
 * `_getUsers()`
 * `_getQuestions()`
-* `_saveQuestion(question)`
-* `_saveQuestionAnswer(object)`
+* `_savedQuestion(question)`
+* `_savedQuestionAnswer(object)`
 
 1) `_getUsers()` Method
 
@@ -63,7 +63,7 @@ Your code will talk to the database via 4 methods:
 *Description*: Get all of the existing questions from the database.  
 *Return Value*: Object where the key is the question’s id and the value is the question object.
 
-3) `_saveQuestion(question)` Method
+3) `_savedQuestion(question)` Method
 
 *Description*: Save the polling question in the database.  
 *Parameters*:  Object that includes the following properties: `author`, `optionOneText`, and `optionTwoText`. More details about these properties:
@@ -84,7 +84,7 @@ Your code will talk to the database via 4 methods:
 | optionTwo | Object | The object has a text property and a votes property, which stores an array of the ids of the users who voted for that option|
 |timestamp|String | The time when the question was created|
 
-4) `_saveQuestionAnswer(object)` Method
+4) `_savedQuestionAnswer(object)` Method
 
 *Description*: Save the answer to a particular polling question in the database.
 *Parameters*: Object that contains the following properties: `authedUser`, `qid`, and `answer`. More details about these properties:

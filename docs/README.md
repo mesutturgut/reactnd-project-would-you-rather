@@ -1,7 +1,6 @@
 <!-- markdownlint-disable MD022 MD024 MD032 MD033 -->
 # Code Notes
-
-| [Live Demo](https://reactnd-would-you-rather.netlify.com/) | [GitHub Repo](https://github.com/james-priest/reactnd-project-would-you-rather) |
+ 
 
 [![wyr77](assets/images/wyr77-small.jpg)](assets/images/wyr77.jpg)<br>
 <span class="center bold">Would You Rather Game</span>
@@ -207,7 +206,7 @@ function formatQuestion ({ optionOneText, optionTwoText, author }) {
   }
 }
 
-export function _saveQuestion (question) {
+export function _savedQuestion (question) {
   return new Promise((res, rej) => {
     const authedUser = question.author;
     const formattedQuestion = formatQuestion(question);
@@ -231,7 +230,7 @@ export function _saveQuestion (question) {
   })
 }
 
-export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
+export function _savedQuestionAnswer ({ authedUser, qid, answer }) {
   return new Promise((res, rej) => {
     setTimeout(() => {
       users = {
@@ -305,7 +304,7 @@ Users should be ordered in descending order based on the sum of the number of qu
 The user should be able to navigate to the leaderboard, to a specific question, and to the form that allows the user to create a new poll both from within the app and by typing in the address into the address bar. To make sure we’re showing the data that is relevant to the user, the application should require the user to be signed in order to access those pages.
 
 ### 1.3 App Architecture
-By walking through the [Planning Stage and the Coding Stage of the Chirper Project](https://james-priest.github.io/udacity-nanodegree-react/course-notes/react-redux.html#72-project-walkthrough), we’ve given you a useful template for building Redux applications. We recommend using this template for building your “Would You Rather?” Project. Remember that planning your project and its architecture before starting to code will save you a lot of debugging time later on!
+ 
 
 For this application, most of the application’s state should be managed by Redux. You’ll find that there are situations where it makes sense to store state outside of the Redux store. Check out what Dan Abramov, the creator of Redux, thinks about [choosing between Redux's store and React's state](https://github.com/reactjs/redux/issues/1287).
 
@@ -318,7 +317,7 @@ Your application’s code should be structured and organized in a logical way, a
 
 2) We recommend using Create React App to generate your submission since it's the easiest way to ensure you have everything the project reviewer will need to install and run your app.
 
-3) By walking through the [Planning Stage and the Coding Stage of the Chirper Project](https://james-priest.github.io/udacity-nanodegree-react/course-notes/react-redux.html#72-project-walkthrough), we’ve given you a useful template for building Redux applications. We recommend using this template for building your “Would You Rather?” Project. Remember that planning your project and its architecture before starting to code will save you a lot of debugging time later on!
+ 
 
 4) Use Redux to manage your application state. For this application, most of the application’s state should be managed by Redux. You may use component state to handle form input fields and controlled components. Otherwise, the rest of the state for your application should be controlled by your reducers.
 
@@ -713,9 +712,7 @@ From there I decided to go straight into building my mockups using [Semantic-UI-
 This would give me a chance to see which layouts, controls, and components work best to display the data.
 
 #### 2.3.1 Sample Page
-
-[![wyr9](assets/images/wyr9-small.jpg)](assets/images/wyr9.jpg)<br>
-Live Demo: [Would You Rather@4-ui-mockups](https://codesandbox.io/s/github/james-priest/reactnd-project-would-you-rather/tree/4-ui-mockups/?fontsize=14) on CodeSandbox
+ 
 
 ### 2.4 Mockup - Nav
 I split out the navigation into a Nav component that is responsive and scales well on mobile devices.
@@ -880,9 +877,7 @@ export class Nav extends Component {
 
 export default Nav;
 ``` -->
-
-[![wyr12](assets/images/wyr12-small.jpg)](assets/images/wyr12.jpg)<br>
-Live Demo: [Would You Rather@5-mockup-nav](https://codesandbox.io/s/github/james-priest/reactnd-project-would-you-rather/tree/5-mockup-nav/?fontsize=14) on CodeSandbox
+ 
 
 ### 2.5 Mockup - Home
 This next mockup employs a Tab component and uses a hard-coded object structure to mimic data from the database.
@@ -1059,9 +1054,7 @@ Here's are two screenshots of the working mockup - one shows the Unanswered Ques
 
 [![wyr11](assets/images/wyr11-small.jpg)](assets/images/wyr11.jpg)<br>
 <span class="center bold">Answered Questions</span>
-
-> Live Demo: [Would You Rather@6-mockup-home](https://codesandbox.io/s/github/james-priest/reactnd-project-would-you-rather/tree/6-mockup-home/?fontsize=14) on CodeSandbox
-
+ 
 ### 2.6 Mockup - Framework
 The next thing I did was to build out a framework for the app so I could click each of the menu items and navigate to every page. This required adding the following.
 
@@ -1417,7 +1410,7 @@ export default Leaderboard;
 [![wyr17](assets/images/wyr17-small.jpg)](assets/images/wyr17.jpg)<br>
 <span class="center bold">Leaderboard Stub</span>-->
 
-> Live Demo: [Would You Rather@7-mockup-framework](https://codesandbox.io/s/github/james-priest/reactnd-project-would-you-rather/tree/7-mockup-framework/?fontsize=14) on CodeSandbox
+ 
 
 ### 2.7 Mockup - Poll Question
 The next set of changes happens in PollContainer.  This component is responsible for rendering the poll question or poll result based on a `showResult` flag we pass down.
@@ -1554,7 +1547,7 @@ export default PollQuestion;
 [![wyr18](assets/images/wyr18-small.jpg)](assets/images/wyr18.jpg)<br>
 <span class="center bold">Poll Question</span>
 
-> Live Demo: [Would You Rather@8-mockup-poll-question](https://codesandbox.io/s/github/james-priest/reactnd-project-would-you-rather/tree/8-mockup-poll-question/?fontsize=14) on CodeSandbox
+ 
 
 ### 2.8 Mockup - Poll Result
 The next step was to add in the PollResult.js component.
@@ -1625,7 +1618,7 @@ export default withRouter(PollResult);
 [![wyr19](assets/images/wyr19-small.jpg)](assets/images/wyr19.jpg)<br>
 <span class="center bold">Poll Result</span>
 
-> Live Demo: [Would You Rather@9-mockup-poll-result](https://codesandbox.io/s/github/james-priest/reactnd-project-would-you-rather/tree/9-mockup-poll-result/?fontsize=14) on CodeSandbox
+ 
 
 ### 2.9 Mockup - New Poll
 The New Poll page allows you to create a poll.
@@ -1740,7 +1733,7 @@ Here are screenshots of the form in different states.
 [![wyr22](assets/images/wyr22-small.jpg)](assets/images/wyr22.jpg)<br>
 <span class="center bold">New Poll - Loader on Submission</span>
 
-> Live Demo: [Would You Rather@10-mockup-new-poll](https://codesandbox.io/s/github/james-priest/reactnd-project-would-you-rather/tree/10-mockup-new-poll/?fontsize=14) on CodeSandbox
+ 
 
 ### 2.10 Mockup - Leaderboard
 The leaderboard shows the top three users ranked by score. Score is determined by number of questions answered plus number of questions asked for a total score.
@@ -1859,7 +1852,7 @@ Here's a screenshot of the leaderboard.
 [![wyr24](assets/images/wyr24-small.jpg)](assets/images/wyr24.jpg)<br>
 <span class="center bold">Leaderboard</span>
 
-> Live Demo: [Would You Rather@11-mockup-leaderboard](https://codesandbox.io/s/github/james-priest/reactnd-project-would-you-rather/tree/11-mockup-leaderboard/?fontsize=14) on CodeSandbox
+ 
 
 ### 2.11 Mockup - Login
 The last mockup is of the Login screen. This needs to do the following.
@@ -2053,7 +2046,7 @@ Here are screenshots of the login page.
 [![wyr27](assets/images/wyr27-small.jpg)](assets/images/wyr27.jpg)<br>
 <span class="center bold">Login 2</span>
 
-> Live Demo: [Would You Rather@12-mockup-login](https://codesandbox.io/s/github/james-priest/reactnd-project-would-you-rather/tree/12-mockup-login/?fontsize=14) on CodeSandbox
+ 
 
 ## 3. Application Design
 ### 3.1 Step 1 - View Requirements
@@ -2294,8 +2287,8 @@ When the app first loads we need to fill the store with data.
 
 Action and data:
 
-- <span class="underline">get</span> **users** - `RECEIVE_USERS`
-- <span class="underline">get</span> **questions**  - `RECEIVE_QUESTIONS`
+- <span class="underline">get</span> **users** - `RECEIVED_USERS`
+- <span class="underline">get</span> **questions**  - `RECEIVED_QUESTIONS`
 
 > ##### 3.3.1.1 Preview of Redux steps
 > The first thing we need to do is fill the Redux store with all initial data when App loads. This is the `users` and `questions` data sets.
@@ -2317,8 +2310,8 @@ Data used to populate form.
 
 Action and data:
 
-- <span class="underline">get</span> **users** - `RECEIVE_USERS`
-- <span class="underline">set</span> **authUser**  - `SET_AUTH_USER`
+- <span class="underline">get</span> **users** - `RECEIVED_USERS`
+- <span class="underline">set</span> **authUser**  - `SET_AUTHED_USER`
 
 #### 3.3.3 Home component events
 Data used to populate tab panes.
@@ -2440,7 +2433,7 @@ Here's the list of data elements we'll be using in this app separated in by stor
   - option data (for answered questions)
 
 #### 3.4.2 Data Normalization
-The [Redux documentation recommends normalizing our state](https://redux.js.org/recipes/structuring-reducers/normalizing-state-shape) according to the following normalization principles.
+ 
 
 - Each type of data gets its own “table” in the state.
 - Each “data table” should store the individual items in an object, with the IDs of the items as keys and the items themselves as the values.
@@ -2465,8 +2458,8 @@ The first step is to create a set of function wrappers to our async data request
 
 - _getUsers
 - _getQuestions
-- _saveQuestion
-- _saveQuestionAnswer
+- _savedQuestion
+- _savedQuestionAnswer
 
 We'll want to create the following API function wrappers for these.
 
@@ -2484,8 +2477,8 @@ This is located at `/src/utils/api.js`.
 import {
   _getUsers,
   _getQuestions,
-  _saveQuestion,
-  _saveQuestionAnswer
+  _savedQuestion,
+  _savedQuestionAnswer
 } from './_DATA';
 
 export function getInitialData() {
@@ -2498,11 +2491,11 @@ export function getInitialData() {
 }
 
 export function saveQuestion(info) {
-  return _saveQuestion(info);
+  return _savedQuestion(info);
 }
 
 export function saveQuestionAnswer(info) {
-  return _saveQuestionAnswer(info);
+  return _savedQuestionAnswer(info);
 }
 ```
 
@@ -2521,11 +2514,11 @@ This is located at: `/src/actions/authUser.js`.
 
 ```js
 // authUser.js
-export const SET_AUTH_USER = 'SET_AUTH_USER';
+export const SET_AUTHED_USER = 'SET_AUTHED_USER';
 
-export function setAuthUser(id) {
+export function setAuthedUser(id) {
   return {
-    type: SET_AUTH_USER,
+    type: SET_AUTHED_USER,
     id
   };
 }
@@ -2536,11 +2529,11 @@ This is located at: `/src/actions/questions.js`.
 
 ```js
 // questions.js
-export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
+export const RECEIVED_QUESTIONS = 'RECEIVED_QUESTIONS';
 
 export function receiveQuestions(questions) {
   return {
-    type: RECEIVE_QUESTIONS,
+    type: RECEIVED_QUESTIONS,
     questions
   };
 }
@@ -2551,11 +2544,11 @@ This is located at: `/src/actions/users.js`.
 
 ```js
 // user.js
-export const RECEIVE_USERS = 'RECEIVE_USERS';
+export const RECEIVED_USERS = 'RECEIVED_USERS';
 
 export function receiveUsers(users) {
   return {
-    type: RECEIVE_USERS,
+    type: RECEIVED_USERS,
     users
   };
 }
@@ -2595,10 +2588,10 @@ This is located at `/src/reducers/authUser.js`.
 
 ```js
 // authUser.js
-import { SET_AUTH_USER } from '../actions/authUser';
+import { SET_AUTHED_USER } from '../actions/authUser';
 
 export default function authUser(state = null, action) {
-  if (action.type === SET_AUTH_USER) {
+  if (action.type === SET_AUTHED_USER) {
     return action.id;
   }
   return state;
@@ -2610,11 +2603,11 @@ This is located at `/src/reducers/questions.js`.
 
 ```js
 // questions.js
-import { RECEIVE_QUESTIONS } from '../actions/questions';
+import { RECEIVED_QUESTIONS } from '../actions/questions';
 
 export default function questions(state = {}, action) {
   switch (action.type) {
-    case RECEIVE_QUESTIONS:
+    case RECEIVED_QUESTIONS:
       return {
         ...state,
         ...action.questions
@@ -2630,11 +2623,11 @@ This is located at `/src/reducers/users.js`.
 
 ```js
 // users.js
-import { RECEIVE_USERS } from '../actions/users';
+import { RECEIVED_USERS } from '../actions/users';
 
 export default function users(state = {}, action) {
   switch (action.type) {
-    case RECEIVE_USERS:
+    case RECEIVED_USERS:
       return {
         ...state,
         ...action.users
@@ -2853,7 +2846,7 @@ When we run the app we can now see the that it is wrapped by the connect compone
 [![wyr55](assets/images/wyr55-small.jpg)](assets/images/wyr55.jpg)<br>
 <span class="center bold">React Tools showing storeState</span>
 
-We can also see our logger is working properly because it outputs both  the RECEIVE_QUESTIONS and RECEIVE_USERS actions.
+We can also see our logger is working properly because it outputs both  the RECEIVED_QUESTIONS and RECEIVED_USERS actions.
 
 [![wyr56](assets/images/wyr56-small.jpg)](assets/images/wyr56.jpg)<br>
 <span class="center bold">DevTools Console with Logger output</span>
@@ -2932,7 +2925,7 @@ We use `mapStateToProps` to get the store's `authUser` state.
 Next we update the Login component to do the following:
 
 - get `users` to populate Login Form dropdown component
-- dispatch SET_AUTH_USER for login
+- dispatch SET_AUTHED_USER for login
 
 We do this in the Login component which is located at `/src/components/Login.js`.
 
@@ -2958,7 +2951,7 @@ import {
   Loader,
   Dimmer
 } from 'semantic-ui-react';
-import { setAuthUser } from '../actions/authUser';
+import { setAuthedUser } from '../actions/authUser';
 
 export class Login extends Component {
   state = {
@@ -3031,13 +3024,13 @@ class LoginForm extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    const { onLoading, setAuthUser } = this.props;
+    const { onLoading, setAuthedUser } = this.props;
     const authUser = this.state.value;
 
     new Promise((res, rej) => {
       onLoading();
       setTimeout(() => res(), 500);
-    }).then(() => setAuthUser(authUser));
+    }).then(() => setAuthedUser(authUser));
   };
   generateDropdownData = () => {
     const { users } = this.props;
@@ -3076,7 +3069,7 @@ class LoginForm extends Component {
 
 const ConnectedLoginForm = connect(
   mapStateToProps,
-  { setAuthUser }
+  { setAuthedUser }
 )(LoginForm);
 
 function mapStateToProps({ users }) {
@@ -3104,12 +3097,12 @@ import {
   Button,
   Container
 } from 'semantic-ui-react';
-import { setAuthUser } from '../actions/authUser';
+import { setAuthedUser } from '../actions/authUser';
 
 class Nav extends Component {
   handleLogout = e => {
     e.preventDefault();
-    this.props.setAuthUser(null);
+    this.props.setAuthedUser(null);
   };
 
   render() {
@@ -3166,7 +3159,7 @@ function mapStateToProps({ users, authUser }) {
 
 export default connect(
   mapStateToProps,
-  { setAuthUser }
+  { setAuthedUser }
 )(Nav);
 ```
 
@@ -3688,11 +3681,11 @@ Here are the updated screenshots which should look the same.
 This step involved creating actions, action creators, & reducers for both the *users* and *questions* store slices.
 
 - Questions state
-  - ADD_ANSWER_TO_QUESTION action
+  - ADD_ANSWER_QUESTION action
   - `addAnswerToQuestion` action creator
   - *questions* reducer
 - Users state
-  - ADD_ANSWER_TO_USER action
+  - ADD_ANSWER_FOR_USER action
   - `addAnswerToUser` action creator
   - *users* reducer
 - Additional code
@@ -3705,11 +3698,11 @@ This is located in `/src/actions/questions.js`.
 
 ```js
 // questions.js
-export const ADD_ANSWER_TO_QUESTION = 'ADD_ANSWER_TO_QUESTION';
+export const ADD_ANSWER_QUESTION = 'ADD_ANSWER_QUESTION';
 
 export function addAnswerToQuestion(authUser, qid, answer) {
   return {
-    type: ADD_ANSWER_TO_QUESTION,
+    type: ADD_ANSWER_QUESTION,
     authUser,
     qid,
     answer
@@ -3723,14 +3716,14 @@ This is located in `/src/reducers/questions.js`.
 ```js
 // questions.js
 import {
-  RECEIVE_QUESTIONS,
-  ADD_ANSWER_TO_QUESTION
+  RECEIVED_QUESTIONS,
+  ADD_ANSWER_QUESTION
 } from '../actions/questions';
 
 export default function questions(state = {}, action) {
   switch (action.type) {
     ...
-    case ADD_ANSWER_TO_QUESTION:
+    case ADD_ANSWER_QUESTION:
       const { authUser, qid, answer } = action;
 
       return {
@@ -3756,11 +3749,11 @@ This file contains both our action creator and thunk middleware function. This i
 import { saveQuestionAnswer } from '../utils/api';
 import { addAnswerToQuestion } from '../actions/questions';
 
-export const ADD_ANSWER_TO_USER = 'ADD_ANSWER_TO_USER';
+export const ADD_ANSWER_FOR_USER = 'ADD_ANSWER_FOR_USER';
 
 function addAnswerToUser(authUser, qid, answer) {
   return {
-    type: ADD_ANSWER_TO_USER,
+    type: ADD_ANSWER_FOR_USER,
     authUser,
     qid,
     answer
@@ -3785,13 +3778,13 @@ This file is located at `/src/reducers/users.js`.
 ```js
 // users.js
 import {
-  ADD_ANSWER_TO_USER,
+  ADD_ANSWER_FOR_USER,
 } from '../actions/users';
 
 export default function users(state = {}, action) {
   switch (action.type) {
     ...
-    case ADD_ANSWER_TO_USER:
+    case ADD_ANSWER_FOR_USER:
       const { authUser, qid, answer } = action;
 
       return {
@@ -3814,10 +3807,10 @@ This is located at `/src/utils/api.js`.
 
 ```js
 // api.js
-import { _saveQuestionAnswer } from './_DATA';
+import { _savedQuestionAnswer } from './_DATA';
 
 export function saveQuestionAnswer(authUser, qid, answer) {
-  return _saveQuestionAnswer({ authUser, qid, answer });
+  return _savedQuestionAnswer({ authUser, qid, answer });
 }
 ```
 
@@ -4066,8 +4059,8 @@ The Redux logger shows that both actions were dispatched as well as updated stat
 The Add Question View allows a new poll to be created. This involves creating actions, action creators, & reducers for both the *questions* and *users* store slices.
 
 - Users state
-  - ADD_QUESTION_TO_USER
-  - `addQuestionToUser` action creator
+  - ADD_QUESTION_FOR_USER
+  - `addQuestionForUser` action creator
   - *users* reducer
 - Questions state
   - ADD_QUESTION action
@@ -4083,11 +4076,11 @@ This file is located in `/src/actions/users.js`.
 
 ```js
 // users.js
-export const ADD_QUESTION_TO_USER = 'ADD_QUESTION_TO_USER';
+export const ADD_QUESTION_FOR_USER = 'ADD_QUESTION_FOR_USER';
 
-export function addQuestionToUser({ id, author }) {
+export function addQuestionForUser({ id, author }) {
   return {
-    type: ADD_QUESTION_TO_USER,
+    type: ADD_QUESTION_FOR_USER,
     id,
     author
   };
@@ -4100,15 +4093,15 @@ This file is located in `/src/reducers/users.js`.
 ```js
 // users.js
 import {
-  RECEIVE_USERS,
-  ADD_ANSWER_TO_USER,
-  ADD_QUESTION_TO_USER
+  RECEIVED_USERS,
+  ADD_ANSWER_FOR_USER,
+  ADD_QUESTION_FOR_USER
 } from '../actions/users';
 
 export default function users(state = {}, action) {
   switch (action.type) {
     ...
-    case ADD_QUESTION_TO_USER:
+    case ADD_QUESTION_FOR_USER:
       const { id, author } = action;
 
       return {
@@ -4129,7 +4122,7 @@ This file contains our action creator and thunk middleware function. This is loc
 ```js
 // questions.js
 import { saveQuestion } from '../utils/api';
-import { addQuestionToUser } from '../actions/users';
+import { addQuestionForUser } from '../actions/users';
 
 export const ADD_QUESTION = 'ADD_QUESTION';
 
@@ -4145,7 +4138,7 @@ export function handleSaveQuestion(optionOneText, optionTwoText, author) {
     return saveQuestion({ optionOneText, optionTwoText, author }).then(
       question => {
         dispatch(addQuestion(question));
-        dispatch(addQuestionToUser(question));
+        dispatch(addQuestionForUser(question));
       }
     );
   };
@@ -4182,11 +4175,11 @@ This is located at `/src/utils/api.js`.
 ```js
 // api.js
 import {
-  _saveQuestion,
+  _savedQuestion,
 } from './_DATA';
 
 export function saveQuestion(question) {
-  return _saveQuestion(question);
+  return _savedQuestion(question);
 }
 ```
 

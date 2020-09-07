@@ -2,12 +2,12 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Header, Button, Form, Radio } from 'semantic-ui-react';
-import { handleSaveQuestionAnswer } from '../actions/users';
+import { handleSavedQuestionAnswer } from '../actions/users';
 
 export class PollQuestion extends Component {
   static propTypes = {
     authUser: PropTypes.string.isRequired,
-    handleSaveQuestionAnswer: PropTypes.func.isRequired,
+    handleSavedQuestionAnswer: PropTypes.func.isRequired,
     question: PropTypes.object.isRequired
   };
   state = {
@@ -19,8 +19,8 @@ export class PollQuestion extends Component {
   handleSubmit = e => {
     e.preventDefault();
     if (this.state.value !== '') {
-      const { authUser, question, handleSaveQuestionAnswer } = this.props;
-      handleSaveQuestionAnswer(authUser, question.id, this.state.value);
+      const { authUser, question, handleSavedQuestionAnswer } = this.props;
+      handleSavedQuestionAnswer(authUser, question.id, this.state.value);
     }
   };
 
@@ -76,6 +76,6 @@ function mapStateToProps({ authUser }, { match }) {
 
 export default connect(
   mapStateToProps,
-  { handleSaveQuestionAnswer }
+  { handleSavedQuestionAnswer }
 )(PollQuestion);
 // export default PollQuestion;

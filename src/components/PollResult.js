@@ -10,7 +10,7 @@ import {
   Button,
   Icon
 } from 'semantic-ui-react';
-import { styles } from '../utils/helpers';
+import { styles } from '../utils/helper';
 
 const YourVoteLabel = () => (
   <Label color="orange" ribbon="right" className="vote">

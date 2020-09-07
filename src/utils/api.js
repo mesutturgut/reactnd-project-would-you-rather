@@ -1,8 +1,8 @@
 import {
   _getUsers,
   _getQuestions,
-  _saveQuestion,
-  _saveQuestionAnswer
+  _savedQuestion,
+  _savedQuestionAnswer
 } from './_DATA';
 
 export function getInitialData() {
@@ -15,10 +15,10 @@ export function getInitialData() {
 }
 
 export function saveQuestion(question) {
-  return _saveQuestion(question);
+  return _savedQuestion(question);
 }
 
-export function saveQuestionAnswer(authUser, qid, answer) {
+export function savedQuestionAnswer(authUser, qid, answer) {
   // console.log('info', { authUser, qid, answer });
-  return _saveQuestionAnswer({ authUser, qid, answer });
+  return _savedQuestionAnswer({ authUser, qid, answer });
 }

@@ -308,7 +308,7 @@ function formatQuestion({ optionOneText, optionTwoText, author }) {
   };
 }
 
-export function _saveQuestion(question) {
+export function _savedQuestion(question) {
   return new Promise((res, rej) => {
     const authUser = question.author;
     const formattedQuestion = formatQuestion(question);
@@ -332,7 +332,7 @@ export function _saveQuestion(question) {
   });
 }
 
-export function _saveQuestionAnswer({ authUser, qid, answer }) {
+export function _savedQuestionAnswer({ authUser, qid, answer }) {
   return new Promise((res, rej) => {
     setTimeout(() => {
       users = {
